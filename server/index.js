@@ -3,8 +3,11 @@ const PORT = 5000
 const { graphqlHTTP } = require("express-graphql")
 const schema = require("./schema/schema")
 const app = express()
+const cors = require("cors")
 const mongoose = require("mongoose")
 const URI = "mongodb+srv://namdo:namdo@cluster0.qftfl.mongodb.net/comp3133_assignment1?retryWrites=true&w=majority"
+
+app.use(cors())
 app.use(
 	"/graphql",
 	graphqlHTTP({
